@@ -38,12 +38,12 @@ function largestRectangle(h) {
     let posStack = [];
     let heightStack = [];
     let max = 0;
-    let size; let temph; let tempi; let i;
+    let size=0; let temph; let tempi; let i;
     let popIt = function(){
         temph = heightStack.pop();
         tempi = posStack.pop();
         size = temph * (i-tempi);
-        if(size>max){
+        if(size > max){
             max = size;
         }
     }
