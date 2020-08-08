@@ -43,13 +43,15 @@ function largestRectangle(h) {
         temph = heightStack.pop();
         tempi = posStack.pop();
         size = temph * (i-tempi);
-        max = Math.max(max,size);
+        if(size>max){
+            max = size;
+        }
     }
     for(i=0;i<h.length;i++){
         if(heightStack.length===0||h[i]>top(heightStack)){
             heightStack.push(h[i]);
             posStack.push(i);
-        } else if(h[i]<top(heightStack)){
+        } else {
             while(heightStack.length && h[i]<top(heightStack)){
                 popIt()
             }
